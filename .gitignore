@@ -5,3 +5,4 @@
 .DS_Store
 *__pycache__*
 keyword_lists/*.txt
+build_models/model_pkls/*.pkl
