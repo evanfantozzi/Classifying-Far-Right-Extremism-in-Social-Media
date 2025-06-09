@@ -1,0 +1,7 @@
+.venv
+*.csv
+*.json
+*.db
+.DS_Store
+*__pycache__*
+keyword_lists/*.txt
