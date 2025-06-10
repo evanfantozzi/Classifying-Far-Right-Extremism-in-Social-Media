@@ -1,5 +1,8 @@
 # Extremism Detector
 
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/50235c1f-edcd-4280-afba-bc5e9a1a5d16" />
+
+
 Our team developed a supervised binary classification model which predicts whether a social media post (e.g., a tweet) is far-right extremist. 
 
 To train and run the model yourself, you can build out your own dataset or contact us.
