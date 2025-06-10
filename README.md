@@ -23,5 +23,5 @@ This ensures you have the libraries you need. Ony need to run once.
 ## python3 build_models/create_model_pkls.py 
 This learns the model and saves it to a file. Only should be run once.
 
-### python3 app.py
+## python3 app.py
 This opens the interactive user interface.
