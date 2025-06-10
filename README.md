@@ -1,7 +1,4 @@
-# Classifying Far-Right Extremism in Social Media: A Supervised Learning
-Approach
-
-**\_\_\_**
+# Classifying Far-Right Extremism in Social Media: A Supervised Learning Approach
 
 ## Topic
 
@@ -10,8 +7,7 @@ given English-language social media post to be right-wing extremist?
 
 ## Data
 
-- 4670 social media posts, all manually labeled as extremist or not by
-  > our team
+- 4670 social media posts, all manually labeled as extremist or not
 
 | **Data Source**               | **Year**    | **\# Extreme** | **\# Non-Extreme** |
 |-------------------------------|-------------|----------------|--------------------|
@@ -22,34 +18,20 @@ given English-language social media post to be right-wing extremist?
 ## Features
 
 - **TF-IDF**: Weighted term frequency  
-  > ![](media/image1.png){width="3.04745406824147in"
-  > height="2.742707786526684in"}
 
 - **MiniLM Sentence Embeddings**: Vector-based semantic similarity
 
-- **Profanity:** Presence of "bad" word or not (0 = Not Present, 1 =
-  > Present)
+- **Profanity:** Presence of "bad" word or not (0 = Not Present, 1 = Present)
 
-- **Subjectivity:** Extracted via TextBlob (0-1 scale where 0 =
-  > Objective, 1 = Subjective)
+- **Subjectivity:** Extracted via TextBlob (0-1 scale where 0 = Objective, 1 = Subjective)
 
-- **Toxicity:** Extracted via Detoxify (0-1 scale where 0 = Not Toxic, 1
-  > = Toxic)
+- **Toxicity:** Extracted via Detoxify (0-1 scale where 0 = Not Toxic, 1 = Toxic)
 
-- **Insider Terms:** Presence of insider term from small list (0 = Not
-  > Present, 1 = Present)
+- **Insider Terms:** Presence of insider term from small list (0 = Not Present, 1 = Present)
 
 ## Model Selection and Results
 
-We tested **Logistic Regression** and **non-linear Support Vector
-Machine** models, ultimately choosing the latter due to its higher
-extremist text recall score, as we are more concerned with avoiding
-false negatives than false
-positives.![](media/image3.png){width="3.8784284776902886in"
-height="2.40625in"}![](media/image2.png){width="3.870479002624672in"
-height="2.40625in"}
-
-That said, our model is not perfect - see if you're able to confuse it!
+We tested **Logistic Regression** and **non-linear Support Vector Machine** models, ultimately choosing the latter due to its higher extremist text recall score, as we are more concerned with avoiding false negatives than false positives.
 
 ### Sample Classifications:  {#sample-classifications}
 
