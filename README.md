@@ -33,7 +33,7 @@ given English-language social media post to be right-wing extremist?
 
 We tested **Logistic Regression** and **non-linear Support Vector Machine** models, ultimately choosing the latter due to its higher extremist text recall score, as we are more concerned with avoiding false negatives than false positives.
 
-### Sample Classifications:  {#sample-classifications}
+### Sample Classifications:
 
 | **Text**                                                                                                                                        | **Classification (%)** |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
