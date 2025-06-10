@@ -1,11 +1,68 @@
-# Extremism Detector
+# Classifying Far-Right Extremism in Social Media: A Supervised Learning
+Approach
 
-<img width="1512" alt="image" src="https://github.com/user-attachments/assets/50235c1f-edcd-4280-afba-bc5e9a1a5d16" />
+**\_\_\_**
 
+## Topic
 
-Our team developed a supervised binary classification model which predicts whether a social media post (e.g., a tweet) is far-right extremist. 
+Our model addresses a simple but important question - how likely is a
+given English-language social media post to be right-wing extremist?
 
-To train and run the model yourself, you can build out your own dataset or contact us.
+## Data
+
+- 4670 social media posts, all manually labeled as extremist or not by
+  > our team
+
+| **Data Source**               | **Year**    | **\# Extreme** | **\# Non-Extreme** |
+|-------------------------------|-------------|----------------|--------------------|
+| Stormchaser                   | 2017        | 1500           | 0                  |
+| Sentiment140                  | 2009        | 0              | 1500               |
+| TwitterAPI (Manually Scraped) | 2024 - 2025 | 51             | 1619               |
+
+## Features
+
+- **TF-IDF**: Weighted term frequency  
+  > ![](media/image1.png){width="3.04745406824147in"
+  > height="2.742707786526684in"}
+
+- **MiniLM Sentence Embeddings**: Vector-based semantic similarity
+
+- **Profanity:** Presence of "bad" word or not (0 = Not Present, 1 =
+  > Present)
+
+- **Subjectivity:** Extracted via TextBlob (0-1 scale where 0 =
+  > Objective, 1 = Subjective)
+
+- **Toxicity:** Extracted via Detoxify (0-1 scale where 0 = Not Toxic, 1
+  > = Toxic)
+
+- **Insider Terms:** Presence of insider term from small list (0 = Not
+  > Present, 1 = Present)
+
+## Model Selection and Results
+
+We tested **Logistic Regression** and **non-linear Support Vector
+Machine** models, ultimately choosing the latter due to its higher
+extremist text recall score, as we are more concerned with avoiding
+false negatives than false
+positives.![](media/image3.png){width="3.8784284776902886in"
+height="2.40625in"}![](media/image2.png){width="3.870479002624672in"
+height="2.40625in"}
+
+That said, our model is not perfect - see if you're able to confuse it!
+
+### Sample Classifications:  {#sample-classifications}
+
+| **Text**                                                                                                                                        | **Classification (%)** |
+|-------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
+| "I woke up on a white beach with an american flag towel"                                                                                        | Non-Extremist (19%)    |
+| "I love the Amazing Race! What a great show about conquering your rivals and finishing number one. I hope they start showing it on Channel USA" | Non-Extremist (23%)    |
+| "I don\'t agree with everything that Trump does, but I think he cares about protecting us"                                                      | Non-Extremist (41%)    |
+| "We're losing our established identity, and no one seems to care. Guess that's \'progress.\'"                                                   | Extremist (52%)        |
+| "I WILL END INFLATION, I WILL STOP THE INVASION OF CRIMINALS COMING INTO OUR COUNTRY, and I WILL BRING BACK THE AMERICAN DREAM"                 | Extremist (68%)        |
+| "The communist threat is circling in on our culture"                                                                                            | Extremist (97%)        |
+
+# Running the Model
 
 ## Dataset Preparation
 See Data.md in the data folder
@@ -13,9 +70,7 @@ See Data.md in the data folder
 ## Keyword Lists Preparation
 See KeywordLists.md in build_models/keyword_lists
 
-
 Once all files are obtained, from the main directory run:
-
 
 ## `uv sync`
 This ensures you have the libraries you need. Ony need to run once.
