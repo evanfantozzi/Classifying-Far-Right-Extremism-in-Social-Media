@@ -59,4 +59,4 @@ This ensures you have the libraries you need. Only need to run once.
 Run `uv run python build_models/create_model_pkls.py`. This learns the model and saves it to a file. Only should be run once.
 
 ## Run App
-Run `python3 app.py`. This opens the interactive user interface.
+Run `uv run python app.py`. This opens the interactive user interface.
