@@ -52,10 +52,8 @@ See Data.md in the data folder
 ## Keyword Lists Preparation
 See KeywordLists.md in build_models/keyword_lists
 
-Once all files are obtained, from the main directory run:
-
-## `uv sync`
-This ensures you have the libraries you need. Ony need to run once.
+Once all files are obtained, from the main directory run: `uv sync`
+This ensures you have the libraries you need. Only need to run once.
 
 ## `python3 build_models/create_model_pkls.py`
 This learns the model and saves it to a file. Only should be run once.
